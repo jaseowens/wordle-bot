@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { AppLayout } from "./AppLayout";
+import { Grid } from "./Components/Grid";
+import { PossibleWords } from "./Components/PossibleWords";
+import { SuggestedWords } from "./Components/SuggestedWords";
+import { GameProvider } from "./Contexts/Game";
 
-function App() {
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GameProvider>
+      <AppLayout>
+        <div className="grid grid-cols-2 grid-flow-col">
+          {/* <SuggestedWords /> */}
+          <Grid />
+          <PossibleWords />
+        </div>
+      </AppLayout>
+    </GameProvider>
   );
-}
-
-export default App;
+};

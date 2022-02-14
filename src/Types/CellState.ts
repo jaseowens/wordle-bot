@@ -1,0 +1,5 @@
+export enum CellState {
+  BLANK = "NOT IN WORD",
+  YELLOW = "IN WORD - WRONG POSITION",
+  GREEN = "IN WORD - CORRECT POSITION",
+}
